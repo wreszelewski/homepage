@@ -10,8 +10,24 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,400,600" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script>
-    $.fn.scrollView = function () { return this.each(function () { $('html, body').animate({ scrollTop: $(this).offset().top }, 1000); }); }
+        $.fn.scrollView = function() {
+            return this.each(function() {
+                $('html, body').animate({
+                    scrollTop: $(this).offset().top
+                }, 1000);
+            });
+        }
 
+        $(document).ready(function() {
+
+                    $(window).scroll(function() {
+                        if ($(this).scrollTop() > 300) {
+                            $('.scrollTop').fadeIn();
+                        } else {
+                            $('.scrollTop').fadeOut();
+                        }
+                    });
+        });
     </script>
 
     <link rel="stylesheet" href="http://meyerweb.com/eric/tools/css/reset/reset.css" />
@@ -19,7 +35,7 @@
 </head>
 
 <body>
-    <div class="introduction">
+    <div id="top" class="introduction">
         <div class="intrRow">
             <div class="profilePicture">
                 <div class="actualImg">
@@ -36,26 +52,26 @@
                 </p>
             </div>
         </div>
-      </div>
-      <div class="basicNav">
+    </div>
+    <div class="basicNav">
         <div class="navRow">
-                <div class="round-button double">
-                    <div class="round-button-circle">
-                        <a href="#educationExperience" onclick="$('#educationExperience').scrollView();">Education & Work experience</a>
-                    </div>
+            <div class="round-button double">
+                <div class="round-button-circle">
+                    <a href="#educationExperience" onclick="$('#educationExperience').scrollView();">Education & Work experience</a>
                 </div>
-                <div class="round-button">
-                    <div class="round-button-circle">
-                        <a href="#skills" onclick="$('#skills').scrollView();">Skills</a>
-                    </div>
-                </div>
-                <div class="round-button">
-                    <div class="round-button-circle">
-                        <a href="#contact" onclick="$('#contact').scrollView();">Contact</a>
-                    </div>
-                </div>
-              </div>
             </div>
+            <div class="round-button">
+                <div class="round-button-circle">
+                    <a href="#skills" onclick="$('#skills').scrollView();">Skills</a>
+                </div>
+            </div>
+            <div class="round-button">
+                <div class="round-button-circle">
+                    <a href="#contact" onclick="$('#contact').scrollView();">Contact</a>
+                </div>
+            </div>
+        </div>
+    </div>
     <div id="educationExperience" class="educationExperience">
         <h2 class="sectionHeader">Education & Work experience</h2>
         <table class="expTable">
@@ -263,196 +279,202 @@
 
     </div>
     <div id="skills" class="skills">
-      <h2 class="sectionHeader">Skills</h2>
-      <h3>
+        <h2 class="sectionHeader">Skills</h2>
+        <h3>
         Programming
       </h3>
-      <ul>
-        <li>
-           <span class="skillItem">Python</span>
-           <span class="stars stars4">★★★★</span>
-        </li>
-        <li>
-           <span class="skillItem">Tornado</span>
-           <span class="stars stars4">★★★★</span>
-        </li>
-        <li>
-           <span class="skillItem">JavaScript</span>
-           <span class="stars stars3">★★★</span>
-        </li>
-        <li>
-           <span class="skillItem">Node.js</span>
-           <span class="stars stars3">★★★</span>
-        </li>
-        <li>
-           <span class="skillItem">C</span>
-           <span class="stars stars2">★★</span>
-        </li>
-        <li>
-           <span class="skillItem">SQL</span>
-           <span class="stars stars3">★★★</span>
-        </li>
-        <li>
-           <span class="skillItem">Bash</span>
-           <span class="stars stars3">★★★</span>
-        </li>
-        <li>
-           <span class="skillItem">HTML</span>
-           <span class="stars stars3">★★★</span>
-        </li>
-        <li>
-           <span class="skillItem">CSS</span>
-           <span class="stars stars3">★★★</span>
-        </li>
+        <ul>
+            <li>
+                <span class="skillItem">Python</span>
+                <span class="stars stars4">★★★★</span>
+            </li>
+            <li>
+                <span class="skillItem">Tornado</span>
+                <span class="stars stars4">★★★★</span>
+            </li>
+            <li>
+                <span class="skillItem">JavaScript</span>
+                <span class="stars stars3">★★★</span>
+            </li>
+            <li>
+                <span class="skillItem">Node.js</span>
+                <span class="stars stars3">★★★</span>
+            </li>
+            <li>
+                <span class="skillItem">C</span>
+                <span class="stars stars2">★★</span>
+            </li>
+            <li>
+                <span class="skillItem">SQL</span>
+                <span class="stars stars3">★★★</span>
+            </li>
+            <li>
+                <span class="skillItem">Bash</span>
+                <span class="stars stars3">★★★</span>
+            </li>
+            <li>
+                <span class="skillItem">HTML</span>
+                <span class="stars stars3">★★★</span>
+            </li>
+            <li>
+                <span class="skillItem">CSS</span>
+                <span class="stars stars3">★★★</span>
+            </li>
 
-      </ul>
+        </ul>
 
-      <h3>
+        <h3>
         Languages
       </h3>
 
-      <ul>
-        <li>
-           <span class="skillItem">English</span>
-           <span class="stars stars4">★★★★</span>
-        </li>
-        <li>
-           <span class="skillItem">Polish</span>
-           <span class="stars">★★★★★</span>
-        </li>
-        <li>
-           <span class="skillItem">Russian</span>
-           <span class="stars stars1">★</span>
-        </li>
-        <li>
-           <span class="skillItem">German</span>
-           <span class="stars stars1">★</span>
-        </li>
-      </ul>
-      <h3>
+        <ul>
+            <li>
+                <span class="skillItem">English</span>
+                <span class="stars stars4">★★★★</span>
+            </li>
+            <li>
+                <span class="skillItem">Polish</span>
+                <span class="stars">★★★★★</span>
+            </li>
+            <li>
+                <span class="skillItem">Russian</span>
+                <span class="stars stars1">★</span>
+            </li>
+            <li>
+                <span class="skillItem">German</span>
+                <span class="stars stars1">★</span>
+            </li>
+        </ul>
+        <h3>
         Version Control & Continous Integration
       </h3>
-      <ul>
-        <li>
-           <span class="skillItem">Git</span>
-           <span class="stars stars4">★★★★</span>
-        </li>
-        <li>
-           <span class="skillItem">Mercurial</span>
-           <span class="stars stars3">★★★</span>
-        </li>
-        <li>
-           <span class="skillItem">Subversion</span>
-           <span class="stars stars3">★★★</span>
-        </li>
-        <li>
-           <span class="skillItem">Stash</span>
-           <span class="stars stars4">★★★★</span>
-        </li>
-        <li>
-           <span class="skillItem">Bamboo</span>
-           <span class="stars stars4">★★★★</span>
-        </li>
-      </ul>
-      <h3>
+        <ul>
+            <li>
+                <span class="skillItem">Git</span>
+                <span class="stars stars4">★★★★</span>
+            </li>
+            <li>
+                <span class="skillItem">Mercurial</span>
+                <span class="stars stars3">★★★</span>
+            </li>
+            <li>
+                <span class="skillItem">Subversion</span>
+                <span class="stars stars3">★★★</span>
+            </li>
+            <li>
+                <span class="skillItem">Stash</span>
+                <span class="stars stars4">★★★★</span>
+            </li>
+            <li>
+                <span class="skillItem">Bamboo</span>
+                <span class="stars stars4">★★★★</span>
+            </li>
+        </ul>
+        <h3>
         Other tools
       </h3>
 
-      <ul>
-        <li>
-           <span class="skillItem">Zabbix</span>
-           <span class="stars stars3">★★★</span>
-        </li>
-        <li>
-           <span class="skillItem">Graphite</span>
-           <span class="stars stars4">★★★★</span>
-        </li>
-        <li>
-           <span class="skillItem">Diamond</span>
-           <span class="stars stars3">★★★</span>
-        </li>
-        <li>
-           <span class="skillItem">SaltStack</span>
-           <span class="stars stars3">★★★</span>
-        </li>
-        <li>
-           <span class="skillItem">Puppet</span>
-           <span class="stars stars2">★★</span>
-        </li>
-        <li>
-           <span class="skillItem">Foreman</span>
-           <span class="stars stars3">★★★</span>
-        </li>
-        <li>
-           <span class="skillItem">Linux</span>
-           <span class="stars stars4">★★★★</span>
-        </li>
-        <li>
-           <span class="skillItem">Windows</span>
-           <span class="stars stars2">★★</span>
-        </li>
-        <li>
-           <span class="skillItem">HaProxy</span>
-           <span class="stars stars3">★★★</span>
-        </li>
-        <li>
-           <span class="skillItem">Nginx</span>
-           <span class="stars stars3">★★★</span>
-        </li>
-        <li>
-           <span class="skillItem">AWS EC2</span>
-           <span class="stars stars3">★★★</span>
-        </li>
-        <li>
-           <span class="skillItem">AWS S3</span>
-           <span class="stars stars3">★★★</span>
-        </li>
-      </ul>
+        <ul>
+            <li>
+                <span class="skillItem">Zabbix</span>
+                <span class="stars stars3">★★★</span>
+            </li>
+            <li>
+                <span class="skillItem">Graphite</span>
+                <span class="stars stars4">★★★★</span>
+            </li>
+            <li>
+                <span class="skillItem">Diamond</span>
+                <span class="stars stars3">★★★</span>
+            </li>
+            <li>
+                <span class="skillItem">SaltStack</span>
+                <span class="stars stars3">★★★</span>
+            </li>
+            <li>
+                <span class="skillItem">Puppet</span>
+                <span class="stars stars2">★★</span>
+            </li>
+            <li>
+                <span class="skillItem">Foreman</span>
+                <span class="stars stars3">★★★</span>
+            </li>
+            <li>
+                <span class="skillItem">Linux</span>
+                <span class="stars stars4">★★★★</span>
+            </li>
+            <li>
+                <span class="skillItem">Windows</span>
+                <span class="stars stars2">★★</span>
+            </li>
+            <li>
+                <span class="skillItem">HaProxy</span>
+                <span class="stars stars3">★★★</span>
+            </li>
+            <li>
+                <span class="skillItem">Nginx</span>
+                <span class="stars stars3">★★★</span>
+            </li>
+            <li>
+                <span class="skillItem">AWS EC2</span>
+                <span class="stars stars3">★★★</span>
+            </li>
+            <li>
+                <span class="skillItem">AWS S3</span>
+                <span class="stars stars3">★★★</span>
+            </li>
+        </ul>
 
 
     </div>
     <div id="contact" class="contact">
-      <h2 class="sectionHeader">
+        <h2 class="sectionHeader">
         Contact
       </h2>
-      <div class="contactWays">
-      <div class="social">
-      <h3>
+        <div class="contactWays">
+            <div class="social">
+                <h3>
         Follow me
       </h3>
-      <ul>
-        <li>
-          <a href="http://www.linkedin.com/in/wreszelewski" class="linkedin">LinkedIn</a>
-        </li>
-        <li>
-          <a href="https://github.com/wreszelewski" class="github">Github</a>
-        </li>
-      </ul>
-    </div>
-    <div class="contactForm">
-      <h3>
+                <ul>
+                    <li>
+                        <a href="http://www.linkedin.com/in/wreszelewski" class="linkedin">LinkedIn</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/wreszelewski" class="github">Github</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="contactForm">
+                <h3>
         Contact form
       </h3>
-      <form action="https://formspree.io/photografia@op.pl" method="POST">
-        <div>
-          <input id="replyTo" type="email" title="Your e-mail" name="email" placeholder="your@email.com"/>
+                <form action="https://formspree.io/photografia@op.pl" method="POST">
+                    <div>
+                        <input id="replyTo" type="email" title="Your e-mail" name="email" placeholder="your@email.com" />
+                    </div>
+                    <div>
+                        <input id="subject" type="text" name="_subject" placeholder="Subject" />
+                    </div>
+                    <div>
+                        <textarea id="emailContent" name="Content" placeholder="Your message"></textarea>
+                    </div>
+                    <button type="Submit">Send</button>
+                </form>
+            </div>
         </div>
-        <div>
-          <input id="subject" type="text" name="_subject" placeholder="Subject"/>
-        </div>
-        <div>
-          <textarea id="emailContent" name="Content" placeholder="Your message"></textarea>
-        </div>
-        <button type="Submit">Send</button>
-      </form>
-    </div>
-  </div>
     </div>
     <div class="copyright">
-      <p>Copyright 2016 Wojciech Reszelewski.</p>
-      <p>Source code of this website is licensed under MIT Licence.</p>
-      <p>All texts on that website are licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
+        <p>Copyright 2016 Wojciech Reszelewski.</p>
+        <p>Source code of this website is licensed under MIT Licence.</p>
+        <p>All texts on that website are licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
     </div>
+
+    <a href="#top" onClick="$('#top').scrollView();" class="scrollTop">
+        <div class="topArrow">
+
+        </div>
+    </a>
 </body>
 
 </html>

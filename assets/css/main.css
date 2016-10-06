@@ -616,3 +616,42 @@ html, body {
 .copyright a {
     color: #ecf0f1;
 }
+
+.scrollTop {
+  width: 70px;
+  height: 70px;
+  border: 3px solid #FFC153;
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  background-color: #FFC153;
+  display: none;
+}
+
+.topArrow {
+
+  border-right: 7px solid;
+  border-bottom: 7px solid;
+  border-color: #ecf0f1;
+  width:26px;
+  height:26px;
+  transform: rotate(-135deg);
+  box-sizing: border-box;
+  margin-top: 23px;
+  background-color: inherit;
+  margin-left: 19px;
+
+}
+
+.scrollTop:hover {
+  border-color: #ecf0f1;
+  background-color: #ecf0f1;
+}
+
+.scrollTop:hover .topArrow {
+  border-color: #FFC153;
+}
