@@ -618,12 +618,12 @@ html, body {
 }
 
 .scrollTop {
-  width: 70px;
-  height: 70px;
+  width: 3em;
+  height: 3em;
   border: 3px solid #FFC153;
   position: fixed;
-  bottom: 1em;
-  right: 1em;
+  bottom: 0.5em;
+  right: 0.5em;
   border-radius: 50%;
   justify-content: center;
   align-items: center;
@@ -637,13 +637,13 @@ html, body {
   border-right: 7px solid;
   border-bottom: 7px solid;
   border-color: #ecf0f1;
-  width:26px;
-  height:26px;
+  width:1em;
+  height:1em;
   transform: rotate(-135deg);
   box-sizing: border-box;
-  margin-top: 23px;
+  margin-top: 1em;
   background-color: inherit;
-  margin-left: 19px;
+  margin-left: 0.9em;
 
 }
 
