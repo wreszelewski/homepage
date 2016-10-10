@@ -22,6 +22,13 @@
 
                     $(window).scroll(function() {
                         if ($(this).scrollTop() > 300) {
+                          if($(this).scrollTop() > ($(document).height() - 1000)) {
+                            console.log("More");
+                            $('.scrollTop').css('bottom', '500px');
+                          } else {
+                            console.log("less");
+                            $('.scrollTop').css('bottom','0.5em');
+                          }
                             $('.scrollTop').fadeIn();
                         } else {
                             $('.scrollTop').fadeOut();
@@ -483,17 +490,19 @@ alt="">
             </div>
         </div>
     </div>
+    <div class="topButton">
+        <a href="#top" onClick="$('#top').scrollView();" class="scrollTop">
+            <div class="topArrow">
+
+            </div>
+        </a>
+      </div>
     <div class="copyright">
         <p>Copyright 2016 Wojciech Reszelewski.</p>
         <p>Source code of this website is licensed under MIT Licence.</p>
         <p>All texts on that website are licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
     </div>
 
-    <a href="#top" onClick="$('#top').scrollView();" class="scrollTop">
-        <div class="topArrow">
-
-        </div>
-    </a>
 </body>
 
 </html>
