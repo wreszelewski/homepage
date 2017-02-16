@@ -55,10 +55,10 @@ html, body {
     color: #ecf0f1;
     text-decoration: none;
     margin-bottom: auto;
-    height: 9vh;
     text-align: center;
     vertical-align:middle;
-    padding-top: 7vh;
+    padding-top: 15%;
+    padding-bottom: 15%;
 }
 
 .cvLnk {
@@ -74,7 +74,7 @@ html, body {
 }
 
 .navBar {
-  margin-top: 2em;
+  margin-top: 20%;
   font-size: 1.5em;
 }
 
@@ -83,14 +83,15 @@ html, body {
 .navBar h1 {
   color: #ecf0f1;
   font-weight: 600;
-  margin-top: 0.3em;
-  margin-bottom: 1.3em;
+  margin-top: 2%;
+  margin-bottom: 13%;
 }
 
 .social {
   text-align: center;
   width: 100%;
   font-size: 0.8em;
+  margin-top: 15%;
 }
 
 .social ul {
@@ -105,7 +106,6 @@ html, body {
 }
 
 .social a {
-    margin-top: 1.5em;
     margin-left: auto;
     margin-right: auto;
     display: block;
@@ -146,6 +146,88 @@ html, body {
 
 .mainContent.blog {
   background-color: #FFC153;
+  color: #462446;
+}
+
+.mainContent.blog h1 {
+  font-weight: 100;
+  font-size: 4em;
+}
+
+.mainContent.blog .header {
+  width: 82%;
+  margin: 0 auto 10% auto;
+  padding-top: 2em;
+
+}
+
+.articleList {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.articleEntry {
+  margin-bottom: 5em;
+}
+
+.entryHeader {
+  width: 100%;
+  min-height: 80px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+.entryContent, .articleContent {
+  margin-left: 15%;
+  margin-right: 5%;
+  margin-top: 1em;
+  text-align: justify;
+}
+
+.articleContent {
+  padding-bottom: 5em;
+}
+
+.articleContent p {
+  margin-bottom: 5%;
+  text-indent: 20px;
+}
+
+.title h2 {
+  padding-top: 1em;
+}
+
+.article {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.comments {
+  background-color: #ecf0f1;
+  width: 100%;
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+
+.comments h2 {
+  color: #2a2e2e;
+  width: 70%;
+  margin: 0 auto 2em auto;
+  font-size: 2em;
+  font-weight: 600;
+}
+
+#disqus_thread {
+  width: 70%;
+  margin: 0 auto;
+  border-bottom: 1px sold;
+}
+
+.comments a {
+  color: #2a2e2e;
 }
 
 .mainContent.contactCard {
@@ -164,10 +246,26 @@ html, body {
     width: 100%;
   }
 
-  .topNav .logo picture, .topNav .logo img {
-    visibility: collapse;
-    width: 0;
-    height: 0;
+  .logo {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+  }
+
+  .topNav .logo img {
+    width: 100%;
+  }
+
+  .topNav .logo picture {
+    width: 8%;
+    padding-top: 0.4em;
+    padding-bottom: 0.2em;
+    width: 65px;
   }
 
   .navBar {
@@ -176,13 +274,16 @@ html, body {
 
   .navBar h1 {
     margin-top: 0;
+    padding-top: 1.5em;
     margin-bottom: 1em;
+    margin-left: 2%;
   }
 
   .links a {
       width: 34%;
       height: 2em;
       padding-top: 1em;
+      padding-bottom: 0;
   }
 
   .topNav .links {
@@ -193,6 +294,7 @@ html, body {
   .social {
     visibility: hidden;
     height: 0;
+    margin-top: 0;
   }
 
   .social a::before {
@@ -434,13 +536,17 @@ html, body {
     display: block;
     float: left;
 }
-.expEntryLongRight {
+.expEntryLongRight, .title {
     border-bottom: 3px solid;
     width: 100%;
     min-width: 150px;
     text-align: right;
     height: 50%;
     min-height: 40px;
+}
+
+.title {
+  width: 70%;
 }
 
 /* Elements that should remain hidden */
@@ -482,18 +588,18 @@ html, body {
     font-weight: 700;
     padding-bottom: 50px;
 }
-.expDateBox {
+.expDateBox, .dateBox {
     position: relative;
     width: 10%;
     min-width: 80px;
     display: block;
 }
-.expDateBox::before {
+.expDateBox::before, .dateBox::before {
     content: "";
     display: block;
     padding-top: 100%;
 }
-.expDate {
+.expDate, .date {
     position: absolute;
     top: 0;
     left: 0;
@@ -509,6 +615,11 @@ html, body {
 .expDate p {
     margin-top: 1.5em;
 }
+
+.date p {
+    margin-top: 1em;
+}
+
 .expEdu .expEntryLongRight {
     border-color: #FFC153;
 }
