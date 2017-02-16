@@ -142,6 +142,7 @@ html, body {
 
 .mainContent.cv {
   background-color: #47B39D;
+  color: #ecf0f1;
 }
 
 .mainContent.blog {
@@ -149,16 +150,21 @@ html, body {
   color: #462446;
 }
 
-.mainContent.blog h1 {
+.mainContent .header h1 {
   font-weight: 100;
   font-size: 4em;
 }
 
-.mainContent.blog .header {
+.mainContent .header {
   width: 82%;
   margin: 0 auto 10% auto;
   padding-top: 2em;
 
+}
+
+.mainContent.blog .date p {
+  font-size: 1.5em;
+  padding-top: 0.8em;
 }
 
 .articleList {
@@ -172,17 +178,29 @@ html, body {
 
 .entryHeader {
   width: 100%;
-  min-height: 80px;
+  height: 150px;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
+  margin-bottom: 3em;
+}
+
+.mainContent a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.articleBack svg {
+  padding-top: 2em;
+  margin-left: 2%;
 }
 
 .entryContent, .articleContent {
-  margin-left: 15%;
-  margin-right: 5%;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
   margin-top: 1em;
   text-align: justify;
 }
@@ -191,15 +209,64 @@ html, body {
   padding-bottom: 5em;
 }
 
-.articleContent p {
+.articleContent p, .entryContent p {
   margin-bottom: 5%;
   text-indent: 20px;
 }
 
-.title h2 {
-  padding-top: 1em;
+.title {
+  height: 50%;
+  width: 90%;
+  border-bottom: 3px solid;
+  text-align: right;
 }
 
+.mainContent.blog .dateBox {
+  min-width: 150px;
+}
+
+.title h2 {
+  padding-top: 0.8em;
+  font-size: 2em;
+}
+
+
+@media(max-device-width: 500px) {
+  .mainContent.blog .dateBox {
+    min-width: 80px;
+  }
+
+  .entryHeader {
+    height: 80px;
+  }
+
+  .mainContent.blog .date p {
+    font-size: 1em;
+    padding-top: 0.1em;
+  }
+
+  .title h2 {
+    padding-top: 0.8em;
+    font-size: 1em;
+  }
+
+  .entryContent {
+    font-size: 0.8em;
+  }
+
+  .articleContent {
+    font-size: 0.8em;
+  }
+
+  .mainContent .header {
+    text-align: center;
+  }
+
+  .mainContent .header h1 {
+    font-size: 2.5em;
+  }
+
+}
 .article {
   width: 90%;
   margin: 0 auto;
@@ -232,6 +299,11 @@ html, body {
 
 .mainContent.contactCard {
   background-color: #462446;
+  color: #ecf0f1;
+}
+
+.mainContent.contactCard .header {
+  margin-bottom: 4%;
 }
 
 @media(max-device-width: 950px) {
@@ -536,17 +608,13 @@ html, body {
     display: block;
     float: left;
 }
-.expEntryLongRight, .title {
+.expEntryLongRight {
     border-bottom: 3px solid;
     width: 100%;
     min-width: 150px;
     text-align: right;
     height: 50%;
     min-height: 40px;
-}
-
-.title {
-  width: 70%;
 }
 
 /* Elements that should remain hidden */
@@ -736,31 +804,13 @@ html, body {
     color: #ecf0f1;
 }
 
-@media(max-device-width: 600px) {
-    .skillItem {
-        width: 120px;
-    }
-}
+
 .skills h3 {
     margin: 4em 0 2em 0;
     color: #ecf0f1;
     font-size: 1.5em;
 }
-.skills ul {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -ms-flex-pack: distribute;
-    -webkit-justify-content: space-around;
-    justify-content: space-around;
-    -ms-flex-wrap: wrap;
-    -webkit-flex-wrap: wrap;
-    flex-wrap: wrap;
-    width: 80%;
-    margin: 0 10%;
-}
+
 .tag {
     display: -webkit-box;
     display: -moz-box;
@@ -782,23 +832,21 @@ html, body {
     margin-bottom: auto;
 }
 
-.tag:hover {
-  color: #FFC153;
-  background-color: #462446;
+@media(max-device-width: 600px) {
+    .skillItem {
+        width: 120px;
+    }
+
+    .skills h3 {
+      text-align: center;
+    }
+
+    .tag {
+      margin-left: 0;
+    }
 }
 
-.contact {
-    width: 100%;
-    color: #ecf0f1;
-    padding-bottom: 5%;
-    text-align: center;
-}
-.contact h3 {
-    font-size: 1.5em;
-    margin-top: 2em;
-}
-.contactWays {
-    width: 100%;
+.skills ul {
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
@@ -810,10 +858,33 @@ html, body {
     -ms-flex-wrap: wrap;
     -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
+    width: 80%;
+    margin: 0 10%;
+}
+
+
+.tag:hover {
+  color: #FFC153;
+  background-color: #462446;
+}
+
+.contact {
+    width: 100%;
+    color: #ecf0f1;
+    text-align: center;
+}
+.contact h3 {
+    font-size: 1.5em;
+    margin-top: 2em;
+}
+.contactWays {
+    width: 100%;
+
 }
 .contactForm {
     width: 30%;
     min-width: 300px;
+    margin: 0 auto;
 }
 .contactForm input, textarea {
     -webkit-box-sizing: border-box;
@@ -854,34 +925,23 @@ html, body {
 .github::before {
     background: url('../pic/github.png');
 }
-.contact ul li:hover {
-    border-bottom: 2px solid #ecf0f1;
-}
-.contact ul {
-    width: 100%;
-    margin-top: 1em;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-}
-.contact ul li {
-    margin-top: 0.5em;
-    padding-bottom: 3px;
-    border-bottom: 2px solid #462446;
-    -ms-flex: 0 1 auto;
 
+.contact .social {
+  width: 20%;
+  margin: 5% auto 0 auto;
 }
+
+.contact .social ul {
+  -ms-flex-pack: space-between;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+
+.contact .social a::before {
+  width: 4em;
+  height: 4em;
+}
+
 .contact form {
     margin-top: 1em;
     text-align: center;
@@ -890,7 +950,7 @@ html, body {
 
     padding: 1em 2%;
     padding-top: 7%;
-    color: #ecf0f1;
+    /*color: #ecf0f1*/;
     text-align: center;
     /*font-weight: 600;*/
     font-size: 0.6em;
@@ -899,7 +959,7 @@ html, body {
 
 
 .copyright a {
-    color: #ecf0f1;
+    color: inherit;
 }
 
 .scrollUp {
