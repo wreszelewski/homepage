@@ -22,7 +22,7 @@ html, body {
 
 
 
-@media (min-device-width: 951px) {
+@media (min-width: 951px) {
     .intrRow {
         display: -webkit-box;
         display: -moz-box;
@@ -198,6 +198,12 @@ html, body {
   margin-bottom: 3em;
 }
 
+.articleEntry:hover .date {
+  background-color: #462446;
+  color: #FFC153;
+  border-color: #462446;
+}
+
 .mainContent a {
   text-decoration: none;
   color: inherit;
@@ -209,11 +215,12 @@ html, body {
 }
 
 .entryContent, .articleContent {
-  width: 80%;
+  width: 85%;
   margin-left: auto;
   margin-right: auto;
   margin-top: 1em;
   text-align: justify;
+  line-height: 140%;
 }
 
 .articleContent {
@@ -242,7 +249,7 @@ html, body {
 }
 
 
-@media(max-device-width: 500px) {
+@media(max-width: 500px) {
   .mainContent.blog .dateBox {
     min-width: 80px;
   }
@@ -288,14 +295,14 @@ html, body {
   width: 100%;
   padding-top: 2em;
   padding-bottom: 2em;
+  text-align: center;
 }
 
 .comments h2 {
   color: #2a2e2e;
-  width: 70%;
-  margin: 0 auto 2em auto;
   font-size: 2em;
   font-weight: 600;
+  margin-bottom: 1em;
 }
 
 #disqus_thread {
@@ -317,7 +324,7 @@ html, body {
   margin-bottom: 4%;
 }
 
-@media(max-device-width: 950px) {
+@media(max-width: 950px) {
   .topMenu {
     width: 100%;
     height: auto;
@@ -393,7 +400,7 @@ html, body {
   }
 }
 
-@media(max-device-width: 1200px) {
+@media(max-width: 1200px) {
   .navBar {
     font-size: 1em;
   }
@@ -422,7 +429,7 @@ html, body {
 
 }
 
-@media (min-device-width: 950px) {
+@media (min-width: 950px) {
     .basicInfo {
         width: 82%;
     }
@@ -435,7 +442,7 @@ html, body {
     }
 
 }
-@media (max-device-width: 950px) {
+@media (max-width: 950px) {
     .basicInfo {
         width: 90%;
         padding: 0 5%;
@@ -525,7 +532,7 @@ html, body {
 .round-button.double a {
     margin-top: -1.5em;
 }
-@media(max-device-width: 699px) {
+@media(max-width: 699px) {
     .navRow {
         width: 100%;
         -ms-flex-pack: distribute;
@@ -543,7 +550,7 @@ html, body {
         font-size: 0.6em;
     }
 }
-@media (min-device-width: 950px) {
+@media (min-width: 950px) {
     .basicInfo p {
         font-size: 1em;
     }
@@ -718,7 +725,7 @@ html, body {
     border-color: #B05F6D;
     background-color: #B05F6D;
 }
-@media (min-device-width: 800px) {
+@media (min-width: 800px) {
     .expEmpty {
       width: 50%;
         min-width: 150px;
@@ -846,7 +853,7 @@ html, body {
     margin-bottom: auto;
 }
 
-@media(max-device-width: 600px) {
+@media(max-width: 600px) {
     .skillItem {
         width: 120px;
     }
@@ -859,9 +866,6 @@ html, body {
       margin-left: 0;
     }
 
-    .comments {
-      text-align: center;
-    }
 }
 
 .skills ul {
@@ -880,11 +884,6 @@ html, body {
     margin: 0 10%;
 }
 
-
-.tag:hover {
-  color: #FFC153;
-  background-color: #462446;
-}
 
 .contact {
     width: 100%;
@@ -945,21 +944,21 @@ html, body {
 }
 
 .contact .social {
-  width: 30%;
+  width: 100%;
+  max-width: 400px;
   margin: 5% auto 0 auto;
   visibility: visible;
   height: auto;
 }
 
-.contact .social ul {
-  -ms-flex-pack: space-between;
-  -webkit-justify-content: space-between;
-  justify-content: space-between;
+.contact .social a {
+  width: 4em;
 }
 
 .contact .social a::before {
   width: 4em;
   height: 4em;
+  visibility: visible;
 }
 
 .contact form {
