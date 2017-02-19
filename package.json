@@ -1,0 +1,21 @@
+{
+  "name": "reszelewski.com",
+  "version": "0.0.1",
+  "description": "Wojciech Reszelewski dev blog",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wreszelewski/homepage.git"
+  },
+  "scripts": {
+    "build": "./node_modules/gulp/bin/gulp.js build",
+	"deploy": "./node_modules/gulp/bin/gulp.js awsPush"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-awspublish": "^3.3.0",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-imagemin": "^3.1.1",
+    "gulp-uglify": "^2.0.1"
+  }
+}
