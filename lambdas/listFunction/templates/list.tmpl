@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, target-densityDpi=device-dpi">
-    <title>Dev blog | Wojciech Reszelewski - Software Developer</title>
+    <title>{{listName}} | Wojciech Reszelewski - Software Developer</title>
     <meta name="description" content="My dev blog. Looking for information about AWS, javascript, python or embedded devices? You're welcome!" />
     <link rel="stylesheet" href="https://static.reszelewski.com/css/reset.css" />
     <link rel="stylesheet" href="https://static.reszelewski.com/css/main.css" />
@@ -44,25 +44,28 @@
   <div class="mainContent blog">
     <div class="header">
 
-    <h1>Blog</h1>
+    <h1>{{listName}}</h1>
   </div>
   <div class="articleList">
-    <a href="/2017/02/17/hello-world.html">
+	{{#posts}}
+    <a href="{{url}}">
     <div class="articleEntry">
       <div class="entryHeader">
         <div class="dateBox">
 
         <div class="date">
-          <p>17 February 2017</p>
+          <p>{{publicationDate}}</p>
         </div>
       </div>
         <div class="title">
-          <h2>Hello World!</h2>
+          <h2>{{postTitle}}</h2>
         </div>
       </div>
       <div class="entryContent">
-        Hi everyone! I'am starting a dev blog and it's my first post. I'll describe here my programming activities I find useful for other people. Today a few words about me and topics that may appear here.
+		  {{{postContent}}}
     </div></a>
+  </div>
+  {{/posts}}
   </div>
     <div class="topButton">
         <a href="#top" onClick="$('#top').scrollUp();" class="scrollUp">
