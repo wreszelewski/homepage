@@ -42,7 +42,7 @@ html, body {
 }
 
 .topNav .links {
-  height: 20%;
+  height: 40vh;
   display: flex;
   display: -webkit-box;
   display: -moz-box;
@@ -67,8 +67,8 @@ html, body {
     text-decoration: none;
     text-align: center;
     vertical-align:middle;
-    padding-top: 13%;
-    padding-bottom: 13%;
+    padding-top: 4vh;
+    padding-bottom: 4vh;
 }
 
 .cvLnk {
@@ -102,7 +102,7 @@ html, body {
   text-align: center;
   width: 100%;
   font-size: 0.8em;
-  margin-top: 2em;
+  margin-top: 0em;
 }
 
 .social ul {
