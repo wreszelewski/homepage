@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, target-densityDpi=device-dpi">
-    <title>Hello World! - Dev blog | Wojciech Reszelewski - Software Developer</title>
+    <title>{{postTitle}} - Dev blog | Wojciech Reszelewski - Software Developer</title>
     <meta name="description" content="Hi everyone! I'am starting a dev blog and it's my first post. I'll describe here my programming activities I find useful for other people. Today a few words about me and topics that may appear here." />
     <link rel="stylesheet" href="https://static.reszelewski.com/css/reset.css" />
     <link rel="stylesheet" href="https://static.reszelewski.com/css/main.css" />
@@ -48,31 +48,21 @@
       	40,70 0,40 100,40 0,40 40,10 "/>
         </svg>  </a>
     <div class="articleHeader header">
-    <h1>Hello World!</h1>
+    <h1>{{postTitle}}</h1>
   </div>
   <div class="article">
 
       <div class="entryHeader">
         <div class="dateBox">
         <div class="date">
-          <p>17 February 2017</p>
+          <p>{{publicationDate}}</p>
         </div>
       </div>
         <div class="title">
         </div>
       </div>
       <div class="articleContent">
-        <p>
-          Hi everyone! I'am starting a dev blog and it's my first post. I'll describe here my programming activities I find useful for other people. Today a few words about me and topics that may appear here.
-</p><p>
-        I'm a professional software developer since 2012, I've managed to earn an MSc in the field of Computer Science and I've even published one scientific paper.
-        Currently I live in Warsaw, Poland.
-      </p><p>
-        My professional interests include cloud computing and any topics related to developing high-traffic internet websites (I'm working for a company that takes care of one of the biggest polish web portals - onet.pl). In addition to this in my free time I like to play with some embedded devices (RaspberryPi, SMT32).
-        My current side projects are this blog and RaspberryPi controlled car. I'll describe both of them here in the nearest future.
-      </p><p>
-        Thanks for reading. Hope to see you again!
-      </p>
+        {{{postContent}}}
   </div>
 </div>
 
