@@ -17,7 +17,7 @@ gulp.task('js', () =>
 		.pipe(gulp.dest('./build/js'))
 );
 
-gulp.task('images', () =>
+/*gulp.task('images', () =>
 	gulp.src('./assets/pic/*')
 		.pipe(imagemin([
 			imagemin.gifsicle(),
@@ -26,7 +26,7 @@ gulp.task('images', () =>
 			imagemin.svgo()
 		]))
 		.pipe(gulp.dest('build/pic'))
-);
+);*/
 
 
 gulp.task('fonts', () =>
@@ -44,11 +44,11 @@ gulp.task('awsPush', () => {
 
 	const headers = {
 		"Cache-Control": 'max-age=604800, public'
-	}
+	};
 
 	return gulp.src('./build/**/*')
 		.pipe(publisher.publish(headers))
 		.pipe(awspublish.reporter());
 });
 
-gulp.task('build', ['css', 'js', 'images', 'fonts']);
+gulp.task('build', ['css', 'js', 'fonts']);
