@@ -1,3 +1,5 @@
+'use strict'
+
 const AWS = require('aws-sdk');
 const marked = require('marked');
 const moment = require('moment');
@@ -12,12 +14,21 @@ exports.handler = function(event, context) {
 
 	Promise.resolve(function() {
 
-		const yearMonth = parseInt(event.pathParameters.year) * 100 + parseInt(event.pathParameters.month);
+        let yearMonth = 0;
+        let url = '';
+        
+        if(event.pathParameters && event.pathParameters.year && event.pathParameters.month) {
+		    yearMonth = parseInt(event.pathParameters.year) * 100 + parseInt(event.pathParameters.month);
+		    url = '/' + event.pathParameters.year + '/' + event.pathParameters.month + '/' + event.pathParameters.post
+        } else {
+            url = event.path;
+        }
+		
 		var params = {
 			TableName: 'Posts',
 			Key: {
 				"yearMonth": {N: yearMonth.toString()},
-				"url": {S: '/' + event.pathParameters.year + '/' + event.pathParameters.month + '/' + event.pathParameters.post}
+				"url": {S: url}
 			}
 		};
 		return params;
@@ -30,11 +41,12 @@ exports.handler = function(event, context) {
 			return data.Item;
 		})
 		.then(function(postContent) {
-
+		    
 			const post = {
 				postTitle: postContent.postTitle.S,
 				postContent: marked(postContent.postContent.S),
-				publicationDate: moment(postContent.publicationDate.N.toString(), "YYYYMMDD").format("Do MMMM YYYY")
+				publicationDate: moment(postContent.publicationDate.N.toString(), "YYYYMMDD").format("Do MMMM YYYY"),
+				disableComments: postContent.disableComments && postContent.disableComments.BOOL
 			};
 
 			fs.readFile('./templates/postDetail.tmpl', function(err, content) {
