@@ -8,6 +8,7 @@ const fs = require('fs');
 const zlib = require('zlib');
 
 const dynamodb = new AWS.DynamoDB();
+const template = fs.readFileSync('./templates/postDetail.tmpl');
 
 exports.handler = function(event, context) {
 
@@ -49,35 +50,32 @@ exports.handler = function(event, context) {
 				disableComments: postContent.disableComments && postContent.disableComments.BOOL
 			};
 
-			fs.readFile('./templates/postDetail.tmpl', function(err, content) {
-				if(err) context.fail(err);
-				var output = Mustache.render(content.toString(), post);
-				if(event.headers && event.headers['Accept-Encoding'] && event.headers['Accept-Encoding'].indexOf('gzip') !== -1) {
-					zlib.gzip(output, function(error, gzipped) {
-						if(error) context.fail(error);
-						context.succeed({
-							statusCode: 200,
-							body: gzipped.toString('base64'),
-							isBase64Encoded: true,
-							headers: {
-								'Content-Type': 'text/html',
-								'Content-Encoding': 'gzip',
-								'Vary': 'Accept-Encoding'
-							}
-						});
-					});
-				} else {
+			var output = Mustache.render(template.toString(), post);
+			if(event.headers && event.headers['Accept-Encoding'] && event.headers['Accept-Encoding'].indexOf('gzip') !== -1) {
+				zlib.gzip(output, function(error, gzipped) {
+					if(error) context.fail(error);
 					context.succeed({
 						statusCode: 200,
-						body: (new Buffer(output)).toString('base64'),
+						body: gzipped.toString('base64'),
 						isBase64Encoded: true,
 						headers: {
 							'Content-Type': 'text/html',
+							'Content-Encoding': 'gzip',
 							'Vary': 'Accept-Encoding'
 						}
 					});
-				}
-			});
+				});
+			} else {
+				context.succeed({
+					statusCode: 200,
+					body: (new Buffer(output)).toString('base64'),
+					isBase64Encoded: true,
+					headers: {
+						'Content-Type': 'text/html',
+						'Vary': 'Accept-Encoding'
+					}
+				});
+			}
 		})
 		.catch(function(err) {
 			context.fail(err);
