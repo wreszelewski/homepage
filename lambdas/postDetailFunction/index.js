@@ -17,14 +17,14 @@ exports.handler = function(event, context) {
 
         let yearMonth = 0;
         let url = '';
-        
+
         if(event.pathParameters && event.pathParameters.year && event.pathParameters.month) {
 		    yearMonth = parseInt(event.pathParameters.year) * 100 + parseInt(event.pathParameters.month);
 		    url = '/' + event.pathParameters.year + '/' + event.pathParameters.month + '/' + event.pathParameters.post
         } else {
             url = event.path;
         }
-		
+
 		var params = {
 			TableName: 'Posts',
 			Key: {
@@ -42,10 +42,11 @@ exports.handler = function(event, context) {
 			return data.Item;
 		})
 		.then(function(postContent) {
-		    
+
 			const post = {
 				postTitle: postContent.postTitle.S,
 				postContent: marked(postContent.postContent.S),
+				postLead: marked(postContent.postContent.S.split('\n')[0]),
 				publicationDate: moment(postContent.publicationDate.N.toString(), "YYYYMMDD").format("Do MMMM YYYY"),
 				disableComments: postContent.disableComments && postContent.disableComments.BOOL
 			};
